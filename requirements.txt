@@ -5,3 +5,5 @@ Django==1.7
 psycopg2==2.5.4
 
 # Django-specific libraries
+django-crispy-forms==1.4.0
+django-extensions==1.4.0
