@@ -1,0 +1,30 @@
+{% extends "layout/base.html" %}
+{% load paginator_tags %}
+
+{% block title %}Orders{% endblock %}
+
+{% block content %}
+    <h1>My orders</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ingredients</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+            <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.get_ingredients }}</td>
+                    <td>{{ order.get_price }}</td>
+                    <td>{{ order.get_status_display }}</td>
+                    <td>{{ order.created_at|date:'d/m/Y g:i A' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% get_pagination 2 1 %}
+{% endblock %}

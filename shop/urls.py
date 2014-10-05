@@ -4,6 +4,7 @@
 from django.conf.urls import patterns, url
 
 from shop.views import OrderCreateView
+from shop.views import OrderListView
 
 
 urlpatterns = patterns('',
@@ -12,5 +13,12 @@ urlpatterns = patterns('',
         r'^order/$',
         OrderCreateView.as_view(),
         name='order_create',
+    ),
+
+    # users oders
+    url(
+        r'^orders/$',
+        OrderListView.as_view(),
+        name='order_list',
     ),
 )

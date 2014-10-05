@@ -4,6 +4,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from django.db.models import Sum
 
 
 class Ingredient(models.Model):
@@ -26,7 +27,7 @@ class Ingredient(models.Model):
     )
 
     def __unicode__(self):
-        return self.name
+        return u'{0} ({1}$)'.format(self.name, self.price)
 
     class Meta:
         ordering = ('name',)
@@ -63,6 +64,21 @@ class Order(models.Model):
         choices=STATUS_CHOICES,
         default=STATUS_ORDERED,
     )
+
+    @property
+    def get_ingredients(self):
+        return u', '.join(
+            self.ingredients.all().values_list(
+                'name',
+                flat=True
+            )
+        )
+
+    @property
+    def get_price(self):
+        return self.ingredients.aggregate(
+            total_price=Sum('price'),
+        )['total_price']
 
     def __unicode__(self):
         return u'{0}: {1}'.format(self.id, self.created_by)
