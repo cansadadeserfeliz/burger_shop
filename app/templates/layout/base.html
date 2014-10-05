@@ -1,4 +1,4 @@
-<!DOCTYPE html>{% load static %}
+<!DOCTYPE html>{% load static compressed %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,6 +9,7 @@
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
+    {% compressed_css 'global_css' %}
     {% block css %}{% endblock %}
 </head>
 
@@ -17,7 +18,7 @@
     <div id="wrapper">
         <div>
             <header>
-                <div class="collapse navbar-collapse navbar-inverse" role="navigation">
+                <div class="navbar navbar-inverse" role="navigation">
                     <div class="container">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -81,6 +82,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js"></script>
 
+    {% compressed_js 'main_js' %}
     {% block js %}{% endblock %}
 </body>
 </html>

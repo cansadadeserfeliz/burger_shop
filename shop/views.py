@@ -3,9 +3,11 @@
 # Author: Vera Mazhuga http://vero4ka.info
 from django.views.generic import CreateView
 from django.views.generic import ListView
+from django.core.urlresolvers import reverse
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.utils.safestring import mark_safe
 
 from shop.models import Order
 from shop.forms import OrderForm
@@ -25,7 +27,14 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
         form.save_m2m()
         messages.success(
             self.request,
-            u'Your order was created successfully',
+            mark_safe(
+                u'Your order was created successfully. '
+                u'<a href="{0}">'
+                u'See a list of orders.'
+                u'</a>'.format(
+                    reverse('shop:order_list')
+                ),
+            ),
         )
         return HttpResponseRedirect(self.get_success_url())
 

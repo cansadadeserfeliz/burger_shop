@@ -10,6 +10,12 @@ from crispy_forms.layout import Submit
 
 
 class OrderForm(forms.ModelForm):
+    total_price = forms.IntegerField(
+        label='Total price',
+        required=False,
+        initial=0,
+    )
+
     class Meta:
         model = Order
         fields = (
@@ -21,5 +27,6 @@ class OrderForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(OrderForm, self).__init__(*args, **kwargs)
+        self.fields['total_price'].widget.attrs['readonly'] = True
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', u'Make an order'))

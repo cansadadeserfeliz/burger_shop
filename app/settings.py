@@ -28,6 +28,7 @@ INSTALLED_APPS = (
     'crispy_forms',
     'django_extensions',
     'grappelli',
+    'pipeline',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -84,6 +85,29 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # django-grappelli
 GRAPPELLI_ADMIN_TITLE = u'Burger Shop'
+
+# django-pipeline
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+
+PIPELINE_CSS = {
+    'global_css': {
+        'source_filenames': (
+            'css/styles.css',
+        ),
+        'output_filename': 'css/styles.min.css',
+    }
+}
+
+PIPELINE_JS = {
+    'main_js': {
+        'source_filenames': (
+            'js/order_form.js',
+        ),
+        'output_filename': 'js/main.min.js',
+    }
+}
+
 
 import sys
 if 'test' in sys.argv:
