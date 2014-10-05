@@ -18,8 +18,18 @@
             {% for order in orders %}
                 <tr>
                     <td>{{ order.get_ingredients }}</td>
-                    <td>{{ order.get_price }}</td>
-                    <td>{{ order.get_status_display }}</td>
+                    <td>{{ order.get_price }}$</td>
+                    <td>
+                    {% if order.status == order.STATUS_ORDERED %}
+                        <span class="label label-primary">{{ order.get_status_display }}</span>
+                    {% elif order.status == order.STATUS_IN_PROGRESS %}
+                        <span class="label label-info">{{ order.get_status_display }}</span>
+                    {% elif order.status == order.STATUS_ON_ROAD %}
+                        <span class="label label-warning">{{ order.get_status_display }}</span>
+                    {% elif order.status == order.STATUS_DELIVERED %}
+                        <span class="label label-success">{{ order.get_status_display }}</span>
+                    {% endif %}
+                    </td>
                     <td>{{ order.created_at|date:'d/m/Y g:i A' }}</td>
                 </tr>
             {% endfor %}
