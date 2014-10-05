@@ -43,6 +43,7 @@ admin.site.register(Ingredient, IngredientAdmin)
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'created_by',
         'created_at',
         'status',
