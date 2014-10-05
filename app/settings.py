@@ -72,6 +72,8 @@ USE_TZ = True
 LOGIN_URL = 'userprofile:login'
 LOGIN_REDIRECT_URL = 'home'
 
+AUTH_USER_MODEL = 'userprofile.User'
+
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 

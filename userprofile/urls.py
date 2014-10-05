@@ -4,7 +4,8 @@
 from django.conf.urls import patterns, url
 from django.core.urlresolvers import reverse_lazy
 
-from userprofile.froms import CustomAuthenticationForm
+from userprofile.forms import CustomAuthenticationForm
+from userprofile.views import UserUpdateView
 
 
 urlpatterns = patterns('',
@@ -26,5 +27,12 @@ urlpatterns = patterns('',
             'next_page': reverse_lazy('home'),
         },
         name='logout',
+    ),
+
+    # profile settings
+    url(
+        r'^settings/$',
+        UserUpdateView.as_view(),
+        name='settings',
     ),
 )
