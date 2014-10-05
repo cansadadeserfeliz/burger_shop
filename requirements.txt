@@ -1,0 +1,7 @@
+# Framework
+Django==1.7
+
+# Libs
+psycopg2==2.5.4
+
+# Django-specific libraries
