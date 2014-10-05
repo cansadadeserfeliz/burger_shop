@@ -22,10 +22,12 @@ ALLOWED_HOSTS = []
 # Applications
 INSTALLED_APPS = (
     'app',
+    'shop',
     'userprofile',
 
     'crispy_forms',
     'django_extensions',
+    'grappelli',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,6 +82,8 @@ STATIC_URL = '/static/'
 # django-crispy
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+# django-grappelli
+GRAPPELLI_ADMIN_TITLE = u'Burger Shop'
 
 import sys
 if 'test' in sys.argv:

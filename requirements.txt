@@ -8,3 +8,4 @@ psycopg2==2.5.4
 django-braces==1.4.0
 django-crispy-forms==1.4.0
 django-extensions==1.4.0
+django-grappelli==2.6.1
