@@ -19,6 +19,10 @@
             Nullam a dignissim erat augue porta molestie.
             Vestibule feugiat, leo et consequat dignissim, risus purus NISL facilisis vitae gravida lacus dui Finibus mi.
         </p>
-        <p><a href="#" class="btn btn-warning btn-lg" role="button">Make an order &raquo;</a></p>
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'shop:order_create' %}" class="btn btn-warning btn-lg" role="button">Make an order &raquo;</a></p>
+    {% else %}
+        <p>Please, log in to make an order</p>
+    {% endif %}
     </div>
 {% endblock %}

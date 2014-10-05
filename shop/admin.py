@@ -45,6 +45,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = (
         'created_by',
         'created_at',
+        'status',
     )
 
     fields = (
