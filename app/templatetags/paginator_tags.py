@@ -12,6 +12,7 @@ def get_pagination(context, first_last_amount=2, before_after_amount=4):
     page_obj = context['page_obj']
     paginator = context['paginator']
     is_paginated = context['is_paginated']
+    request = context['request']
     page_numbers = []
 
     # Pages before current page
@@ -47,4 +48,5 @@ def get_pagination(context, first_last_amount=2, before_after_amount=4):
         'page_obj': page_obj,
         'page_numbers': page_numbers,
         'is_paginated': is_paginated,
+        'request': request,
     }

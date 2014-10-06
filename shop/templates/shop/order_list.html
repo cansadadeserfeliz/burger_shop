@@ -5,6 +5,30 @@
 
 {% block content %}
     <h1>My orders</h1>
+
+{% if orders %}
+    <div class="clearfix">
+        <form class="form-inline pull-right" role="search">
+            <div class="form-group">
+                <label>Status:</label>
+                <select name="status" class="form-control">
+                    <option value="" {% if not status_query %}selected="selected"{% endif %}>---</option>
+                {% for status_code, status_name in orders.0.STATUS_CHOICES %}
+                    <option value="{{ status_code }}" {% ifequal status_code status_query %}selected="selected"{% endifequal %}>{{ status_name }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+{% endif %}
+
     <table class="table table-striped">
         <thead>
             <tr>
