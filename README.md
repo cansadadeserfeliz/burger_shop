@@ -31,3 +31,5 @@ Screenshots
 ![Screenshot: Edit profile](http://i.imgur.com/jEKirk7.png)
 
 ![Screenshot: Orders list](http://i.imgur.com/MebAfv3.png)
+
+![Screenshot: Admin](http://i.imgur.com/XgOl0Vy.png)
