@@ -76,6 +76,8 @@ class Order(models.Model):
 
     @property
     def get_price(self):
+        """Get a total price for the selected ingredients
+        """
         return self.ingredients.aggregate(
             total_price=Sum('price'),
         )['total_price']

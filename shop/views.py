@@ -45,6 +45,7 @@ class OrderListView(ListView):
     paginate_by = 5
 
     def dispatch(self, *args, **kwargs):
+        # get the value of the filter by status
         self.status_query = self.request.GET.get('status', None)
         try:
             self.status_query = int(self.status_query)
@@ -54,15 +55,18 @@ class OrderListView(ListView):
 
     def get_queryset(self):
         queryset = super(OrderListView, self).get_queryset()
+        # filter by status of an order
         if self.status_query:
             queryset = queryset.filter(
                 status=self.status_query,
             )
+        # return orders of the current user
         return queryset.filter(
             created_by=self.request.user,
         )
 
     def get_context_data(self, **kwargs):
         context = super(OrderListView, self).get_context_data(**kwargs)
+        # return the value of a filter by status in a context
         context['status_query'] = self.status_query
         return context
