@@ -21,6 +21,32 @@ As the manager/cook, I need to:
 * Filter by order status.
 * Do all the above only when logged in.
 
+Installation
+------------
+
+    git clone https://github.com/ctrl-alt-delete/burger_shop.git
+    pip install -r requirements.txt
+    touch app/local_settings.py
+
+Define your local settings in ``local_settings.py``, for example,
+
+    DEBUG = True
+    
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'burger_shop',
+        }
+    }
+
+Run migrations:
+
+    python manage.py migrate
+    
+Run server:
+
+    python manage.py runserver
+
 Screenshots
 -----------
 
