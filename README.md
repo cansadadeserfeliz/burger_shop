@@ -20,3 +20,12 @@ As the manager/cook, I need to:
 * Set/change the status of orders (ordered, in progress, on the road, delivered).
 * Filter by order status.
 * Do all the above only when logged in.
+
+Screenshots
+-----------
+
+![Screenshot: Home page](http://i.imgur.com/5uyIIrM.png)
+
+![Screenshot: Make an order](http://i.imgur.com/C5sYDXQ.png)
+
+![Screenshot: Edit profile](http://i.imgur.com/jEKirk7.png)
