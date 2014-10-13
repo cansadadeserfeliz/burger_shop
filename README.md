@@ -50,12 +50,12 @@ Run server:
 Screenshots
 -----------
 
-![Screenshot: Home page](http://i.imgur.com/5uyIIrM.png)
+![Screenshot: Home page](http://vero4ka.info/images/docs/shop1.png)
 
-![Screenshot: Make an order](http://i.imgur.com/C5sYDXQ.png)
+![Screenshot: Make an order](http://vero4ka.info/images/docs/shop2.png)
 
-![Screenshot: Edit profile](http://i.imgur.com/jEKirk7.png)
+![Screenshot: Edit profile](http://vero4ka.info/images/docs/shop3.png)
 
-![Screenshot: Orders list](http://i.imgur.com/MebAfv3.png)
+![Screenshot: Orders list](http://vero4ka.info/images/docs/shop4.png)
 
-![Screenshot: Admin](http://i.imgur.com/XgOl0Vy.png)
+![Screenshot: Admin](http://vero4ka.info/images/docs/shop5.png)
