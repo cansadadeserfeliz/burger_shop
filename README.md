@@ -58,4 +58,4 @@ Screenshots
 
 ![Screenshot: Orders list](http://vero4ka.info/static/images/docs/shop4.png)
 
-![Screenshot: Admin](http://vero4ka.info/images/static/docs/shop5.png)
+![Screenshot: Admin](http://vero4ka.info/static/images/docs/shop5.png)
