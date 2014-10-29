@@ -59,3 +59,7 @@ Screenshots
 ![Screenshot: Orders list](http://vero4ka.info/static/images/docs/shop4.png)
 
 ![Screenshot: Admin](http://vero4ka.info/static/images/docs/shop5.png)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ctrl-alt-delete/burger_shop/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
