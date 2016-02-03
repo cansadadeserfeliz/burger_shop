@@ -24,7 +24,7 @@ As the manager/cook, I need to:
 Installation
 ------------
 
-    git clone https://github.com/ctrl-alt-delete/burger_shop.git
+    git clone https://github.com/vero4karu/burger_shop.git
     pip install -r requirements.txt
     touch app/local_settings.py
 
