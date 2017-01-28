@@ -105,10 +105,16 @@ AUTH_USER_MODEL = 'userprofile.User'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'app', 'static'),
+)
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    
+    'pipeline.finders.FileSystemFinder',
+    'pipeline.finders.AppDirectoriesFinder',
+    'pipeline.finders.CachedFileFinder',
     'pipeline.finders.PipelineFinder',
 )
 
@@ -149,3 +155,5 @@ if 'test' in sys.argv:
     from app.test_settings import *
 else:
     from app.local_settings import *
+
+PIPELINE['PIPELINE_ENABLED'] = not DEBUG

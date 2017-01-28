@@ -50,15 +50,15 @@ Run server:
 Screenshots
 -----------
 
-![Screenshot: Home page](http://vero4ka.info/static/images/docs/shop1.png)
+![Screenshot: Home page](https://habrastorage.org/files/948/710/e06/948710e06ffb4bb7b82ed3418904ce54.png)
 
-![Screenshot: Make an order](http://vero4ka.info/static/images/docs/shop2.png)
+![Screenshot: Make an order](https://habrastorage.org/files/ebe/a76/136/ebea761361074802971dd9f040012992.png)
 
-![Screenshot: Edit profile](http://vero4ka.info/static/images/docs/shop3.png)
+![Screenshot: Edit profile](https://habrastorage.org/files/842/ac2/a07/842ac2a0721d4d24914de19c94288aff.png)
 
-![Screenshot: Orders list](http://vero4ka.info/static/images/docs/shop4.png)
+![Screenshot: Orders list](https://habrastorage.org/files/572/a3d/f41/572a3df41d7747c1a1d71d83777255eb.png)
 
-![Screenshot: Admin](http://vero4ka.info/static/images/docs/shop5.png)
+![Screenshot: Admin](https://habrastorage.org/files/7b2/c4e/ea5/7b2c4eea5ffd4b8a8592cba9de79a143.png)
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ctrl-alt-delete/burger_shop/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
