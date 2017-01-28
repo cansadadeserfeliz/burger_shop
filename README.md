@@ -60,6 +60,8 @@ Screenshots
 
 ![Screenshot: Edit profile](https://habrastorage.org/files/842/ac2/a07/842ac2a0721d4d24914de19c94288aff.png)
 
+-------------
+
 ![Screenshot: Orders list](https://habrastorage.org/files/572/a3d/f41/572a3df41d7747c1a1d71d83777255eb.png)
 
 -------------
