@@ -48,6 +48,22 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -89,6 +105,13 @@ AUTH_USER_MODEL = 'userprofile.User'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/uploads/'
 
@@ -99,25 +122,25 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 GRAPPELLI_ADMIN_TITLE = u'Burger Shop'
 
 # django-pipeline
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
-
-PIPELINE_CSS = {
-    'global_css': {
-        'source_filenames': (
-            'css/styles.css',
-        ),
-        'output_filename': 'css/styles.min.css',
-    }
-}
-
-PIPELINE_JS = {
-    'main_js': {
-        'source_filenames': (
-            'js/order_form.js',
-        ),
-        'output_filename': 'js/main.min.js',
-    }
+PIPELINE = {
+    'PIPELINE_ENABLED': True,
+    'JAVASCRIPT': {
+        'main_js': {
+            'source_filenames': (
+                'js/order_form.js',
+            ),
+            'output_filename': 'js/main.min.js',
+        }
+    },
+    'STYLESHEETS': {
+        'global_css': {
+            'source_filenames': (
+                'css/styles.css',
+            ),
+            'output_filename': 'css/styles.min.css',
+        }
+    },
+    'JS_COMPRESSOR': 'pipeline.compressors.jsmin.JSMinCompressor',
 }
 
 

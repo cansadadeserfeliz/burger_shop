@@ -1,13 +1,13 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 # Author: Vera Mazhuga http://vero4ka.info
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from shop.views import OrderCreateView
 from shop.views import OrderListView
 
 
-urlpatterns = patterns('',
+urlpatterns = [
     # make an order
     url(
         r'^order/$',
@@ -21,4 +21,4 @@ urlpatterns = patterns('',
         OrderListView.as_view(),
         name='order_list',
     ),
-)
+]

@@ -1,18 +1,19 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 # Author: Vera Mazhuga http://vero4ka.info
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.core.urlresolvers import reverse_lazy
+from django.contrib.auth.views import login, logout
 
 from userprofile.forms import CustomAuthenticationForm
 from userprofile.views import UserUpdateView
 
 
-urlpatterns = patterns('',
+urlpatterns = [
     # login
     url(
         r'^login/$',
-        'django.contrib.auth.views.login',
+        login,
         {
             'authentication_form': CustomAuthenticationForm,
         },
@@ -22,7 +23,7 @@ urlpatterns = patterns('',
     # logout
     url(
         r'^accounts/logout/$',
-        'django.contrib.auth.views.logout',
+        logout,
         {
             'next_page': reverse_lazy('home'),
         },
@@ -35,4 +36,4 @@ urlpatterns = patterns('',
         UserUpdateView.as_view(),
         name='settings',
     ),
-)
+]
